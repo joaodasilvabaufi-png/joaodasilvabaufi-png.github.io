@@ -23,50 +23,70 @@
   <h2>2. Worum es geht</h2>
   <p>Diese Erklärung gilt für das Desktop-Programm „DBI Kontaktcockpit“ (Mac und Windows) und für diese Webseite. Das Programm unterstützt Finanzberater bei der Betreuung ihrer Kunden. Der Zugang wird vom Herausgeber einzeln freigeschaltet.</p>
 
-  <h2>3. Verbindung mit Google (optional)</h2>
+  <h2>3. Anmeldung, zentrale Speicherung und Sicherungen</h2>
+  <ul>
+    <li><strong>Anmeldung:</strong> Berater melden sich mit ihrer E-Mail-Adresse und einem Einmalcode an. Dafür werden E-Mail-Adresse, Name (falls angegeben), Freigabestatus und eine Gerätekennung beim Dienst Supabase verarbeitet.</li>
+    <li><strong>Kundenbestand:</strong> Die Kundendaten des Beraters liegen in einer zentralen Datenbank in der EU (Supabase, Rechenzentrum Frankfurt) und werden verschlüsselt übertragen. Zugriff haben nur freigeschaltete Konten, denen der Bestand gehört oder für die er freigegeben wurde.</li>
+    <li><strong>Nachtsicherung:</strong> Nachts erstellt der Server von jedem geänderten Bestand eine verschlüsselte Sicherungskopie. Öffnen kann sie nur der Herausgeber, und nur, um im Notfall wiederherzustellen. Die Kopien liegen im geschützten Speicher der zentralen Datenbank (EU). Endgültig gelöschte Kunden bleiben auch bei einer Wiederherstellung gelöscht.</li>
+    <li><strong>Eigene Sicherung (optional):</strong> Ein Berater kann eine verschlüsselte Sicherung seiner Daten in <em>seinem eigenen</em> OneDrive ablegen. Dafür verbindet er sein Microsoft-Konto gesondert, mit den Berechtigungen <code>Files.ReadWrite.AppFolder</code> und <code>Files.Read</code>. <code>Files.Read</code> verlangt Microsoft für die Anzeige des freien Speicherplatzes. Das Programm schreibt nur in seinen eigenen App-Ordner.</li>
+    <li><strong>Übergabe und Export:</strong> Kunden lassen sich verschlüsselt an einen anderen freigeschalteten Berater übergeben. Ein Export (Excel/PDF) legt eine unverschlüsselte Datei auf dem Gerät des Beraters ab, und das Programm weist vorher darauf hin.</li>
+  </ul>
+
+  <h2>4. Verbindung mit Google (optional)</h2>
   <p>Jeder Berater kann im Programm sein eigenes Google-Konto verbinden. Die Anmeldung läuft im Browser direkt bei Google. Das Programm fragt nur diese Berechtigungen an und nutzt sie nur für Aktionen, die der Berater im Programm selbst auslöst:</p>
   <ul>
     <li><strong>E-Mails senden (Gmail, <code>gmail.send</code>):</strong> Das Programm sendet die Mail, die der Berater erstellt und bestätigt hat, an den angezeigten Empfänger, z. B. eine Terminbestätigung oder eine Nachfass-Mail. Es liest das Postfach nicht.</li>
     <li><strong>Kalendertermine (<code>calendar.events</code>):</strong> Das Programm trägt im Programm gebuchte Kundentermine in den gewählten Google-Kalender ein, verschiebt oder sagt sie ab, auf Wunsch mit Google-Meet-Link. Es liest Termine der eigenen Kalender, um belegte Zeiten anzuzeigen und vor Überschneidungen zu warnen.</li>
     <li><strong>Kalenderliste (<code>calendar.calendarlist.readonly</code>):</strong> Das Programm zeigt die eigenen Kalender an, damit der Berater den Zielkalender wählen kann.</li>
+    <li><strong>Konto-Kennung (<code>openid</code>, <code>email</code>):</strong> Das Programm zeigt an, welches Google-Konto verbunden ist.</li>
   </ul>
-
   <h3>Speicherung</h3>
   <ul>
-    <li>Die Anmeldedaten für Google (Zugriffstoken) liegen nur auf dem Gerät des Beraters, im geschützten Speicher des Betriebssystems (macOS-Schlüsselbund bzw. Windows-Anmeldeinformationen).</li>
+    <li>Die Anmeldedaten für Google (Zugriffstoken) liegen nur auf dem Gerät des Beraters: auf dem Mac im Schlüsselbund, unter Windows mit der benutzergebundenen Windows-Datenschutz-API verschlüsselt im Datenordner des Programms.</li>
     <li>Termine aus dem Google-Kalender, die nicht im Programm gebucht wurden, werden nur zur Anzeige geladen und nicht gespeichert.</li>
-    <li>Zu im Programm gebuchten Terminen speichert das Programm die Termindaten samt Link zum Google-Kalendereintrag und zum Meet-Raum im Kundenbestand des Beraters.</li>
-    <li>Zu gesendeten Mails speichert das Programm einen Vermerk (Datum, Art, Betreff) im Verlauf des Kunden und ein verschlüsseltes Versandprotokoll (Empfänger, Betreff, Zeitpunkt, Ergebnis) auf dem Gerät, damit keine Mail doppelt rausgeht. Den Mailtext speichert es nicht.</li>
-    <li>Der Kundenbestand liegt verschlüsselt übertragen in einer zentralen Datenbank in der EU (Supabase, Rechenzentrum Frankfurt). Zugriff haben nur freigeschaltete Konten mit Berechtigung für diesen Bestand.</li>
+    <li>Zu im Programm gebuchten Terminen speichert das Programm die Termindaten samt Meet-Link (falls vorhanden) im Kundenbestand des Beraters. Den Link zum Google-Kalendereintrag zeigt es nur während der Bearbeitung an und speichert ihn nicht.</li>
+    <li>Zu gesendeten Mails speichert das Programm einen Vermerk (Datum, Art, Betreff) im Verlauf des Kunden. Auf dem Gerät führt es ein verschlüsseltes Versandprotokoll (Empfänger, Betreff, Zeitpunkt, Ergebnis), damit keine Mail doppelt rausgeht. Den Mailtext speichert es nicht.</li>
   </ul>
-
   <h3>Keine Weitergabe, keine Werbung</h3>
-  <p>Google-Daten werden nicht verkauft, nicht für Werbung genutzt und nicht zum Trainieren von KI-Modellen verwendet. Sie werden nicht an Dritte weitergegeben, außer an Dienstleister, die für den Betrieb nötig sind (zentrale Datenbank, siehe oben). Die optionale KI-Hilfe für Textentwürfe erhält keine Google-Daten und keine Kundendaten, sondern nur die Textvorlage. Menschen lesen Google-Daten nicht, außer der Berater selbst, mit seiner ausdrücklichen Zustimmung, zur Sicherheit oder wenn das Gesetz es verlangt.</p>
-
+  <p>Google-Daten werden nicht verkauft, nicht für Werbung genutzt und nicht zum Trainieren von KI-Modellen verwendet. Sie werden nicht an Dritte weitergegeben, außer an Dienstleister, die für den Betrieb nötig sind (zentrale Datenbank, siehe oben). Menschen lesen Google-Daten nicht, außer der Berater selbst, mit seiner ausdrücklichen Zustimmung, zur Sicherheit oder wenn das Gesetz es verlangt.</p>
   <p class="wichtig">The use of information received from Google Workspace scopes will adhere to the Google User Data Policy, including the Limited Use requirements.</p>
   <p>Siehe <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>.</p>
 
-  <h3>Verbindung trennen</h3>
-  <p>Im Programm unter „Einstellungen → Konten &amp; KI“ lässt sich Google jederzeit trennen; die Anmeldedaten auf dem Gerät werden dabei gelöscht. Zusätzlich kann der Zugriff unter <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> widerrufen werden.</p>
+  <h2>5. Verbindung mit Microsoft/Outlook (optional)</h2>
+  <p>Statt Gmail kann ein Berater sein Microsoft-Konto verbinden, um Mails über Outlook zu senden. Die Berechtigungen sind <code>Mail.Send</code>, <code>User.Read</code> (Anzeige des verbundenen Kontos), <code>openid</code>, <code>profile</code> und <code>offline_access</code>. Das Programm sendet nur Mails, die der Berater auslöst, und liest das Postfach nicht. Die Anmeldedaten werden gespeichert wie bei Google.</p>
 
-  <h2>4. Diese Webseite</h2>
+  <h2>6. KI-Hilfe für Textentwürfe (optional)</h2>
+  <p>Für Textentwürfe kann ein Berater sein eigenes ChatGPT-Konto verbinden (Anbieter: OpenAI, USA). An ChatGPT geht nur die Textvorlage mit Platzhaltern, keine Kundendaten und keine Daten aus Google oder Microsoft.</p>
+
+  <h2>7. Updates und Feedback</h2>
+  <p>Das Programm sucht beim Start und alle 6 Stunden bei GitHub nach geprüften Updates. GitHub verarbeitet dabei technisch notwendige Zugriffsdaten wie die IP-Adresse. Über „Feedback senden“ gehen Art und Text der Nachricht, die Programmversion und das Betriebssystem an den Herausgeber, aber keine Kundendaten.</p>
+
+  <h2>8. Verbindungen trennen</h2>
+  <p>Google, Microsoft und ChatGPT lassen sich im Programm unter „Einstellungen → Konten &amp; KI“ jederzeit trennen. Die Anmeldedaten auf dem Gerät werden dabei gelöscht. Den Zugriff für Google kannst du zusätzlich unter <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> widerrufen, den für Microsoft unter <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a> bzw. in deinem Firmenkonto.</p>
+
+  <h2>9. Diese Webseite</h2>
   <p>Die Webseite wird über GitHub Pages bereitgestellt (GitHub, Inc.). Beim Aufruf verarbeitet GitHub technisch notwendige Zugriffsdaten wie die IP-Adresse. Die Seite setzt keine Cookies und keine Analysewerkzeuge ein.</p>
 
-  <h2>5. Deine Rechte</h2>
+  <h2>10. Deine Rechte</h2>
   <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO). Wende dich dafür per E-Mail an den Verantwortlichen. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
 
   <h2 id="english">Privacy Policy (English)</h2>
   <p><strong>Controller:</strong> João da Silva, Kieler Straße 424, 22525 Hamburg, Germany, <a href="mailto:joao.dasilva.baufi@gmail.com">joao.dasilva.baufi@gmail.com</a>. This policy covers the desktop app “DBI Kontaktcockpit” (macOS, Windows) and this website.</p>
+  <p><strong>Sign-in, central storage and backups.</strong> Advisors sign in with their email address and a one-time code. Email address, name (if provided), approval status and a device identifier are processed by the Supabase service for this. The advisor's customer database is hosted in the EU (Supabase, Frankfurt data center) and transmitted encrypted. Only approved accounts that own the database or were granted access can access it. Each night the server creates an encrypted backup of every changed database, which only the publisher can open, and only to restore in an emergency. It is kept in the protected storage of the central database (EU). Customers deleted permanently stay deleted on restore. Optionally, an advisor can store an encrypted backup of their data in <em>their own</em> OneDrive by connecting their Microsoft account separately with the scopes <code>Files.ReadWrite.AppFolder</code> and <code>Files.Read</code> (required by Microsoft to show the free space); the app writes only to its own app folder. Customers can be handed over encrypted to another approved advisor. An export (Excel/PDF) creates an unencrypted file on the advisor's device, and the app warns about this first.</p>
   <p><strong>Google user data.</strong> Each advisor may connect their own Google account; sign-in happens in the browser directly with Google. The app requests only these scopes and uses them only for actions the advisor triggers in the app:</p>
   <ul>
     <li><code>gmail.send</code>: sends the email the advisor composed and confirmed (e.g. an appointment confirmation) to the shown recipient. The app does not read the mailbox.</li>
     <li><code>calendar.events</code>: creates, moves and cancels customer appointments booked in the app in the chosen Google Calendar, optionally with a Google Meet link; reads events of the advisor's calendars to show busy times and warn about overlaps.</li>
     <li><code>calendar.calendarlist.readonly</code>: lists the advisor's calendars so they can choose the target calendar.</li>
+    <li><code>openid</code>, <code>email</code>: shows which Google account is connected.</li>
   </ul>
-  <p><strong>Storage.</strong> OAuth tokens are stored only on the advisor's device in the operating system's protected storage (macOS Keychain / Windows Credential Manager). Calendar events not booked in the app are loaded for display only and are not stored. For appointments booked in the app, the app stores the appointment data including the links to the Google Calendar event and the Meet room in the advisor's customer database. For sent emails, the app stores a note (date, type, subject) in the customer's history and an encrypted send log (recipient, subject, time, result) on the device to prevent duplicate sending; it does not store the message body. The customer database is hosted in the EU (Supabase, Frankfurt data center), transmitted encrypted, and accessible only to approved accounts with permission for that database.</p>
-  <p><strong>No sharing, no advertising.</strong> Google user data is not sold, not used for advertising and not used to train AI models. It is not transferred to third parties except service providers necessary to operate the app (the database above). The optional AI drafting feature receives no Google user data and no customer data, only the text template. No humans read Google user data except the advisor, with the advisor's explicit consent, for security purposes, or to comply with applicable law.</p>
+  <p><strong>Storage.</strong> OAuth tokens are stored only on the advisor's device: on macOS in the Keychain, on Windows encrypted with the user-bound Windows Data Protection API in the app's data folder. Calendar events not booked in the app are loaded for display only and are not stored. For appointments booked in the app, the app stores the appointment data including the Meet link, if any, in the advisor's customer database. The link to the Google Calendar event itself is only shown while editing and is not stored. For sent emails, the app stores a note (date, type, subject) in the customer's history. On the device it keeps an encrypted send log (recipient, subject, time, result) to prevent duplicate sending. It does not store the message body.</p>
+  <p><strong>No sharing, no advertising.</strong> Google user data is not sold, not used for advertising and not used to train AI models. It is not transferred to third parties except service providers necessary to operate the app (the database above). No humans read Google user data except the advisor, with the advisor's explicit consent, for security purposes, or to comply with applicable law.</p>
   <p class="wichtig">The use of information received from Google Workspace scopes will adhere to the Google User Data Policy, including the Limited Use requirements.</p>
-  <p><strong>Revoking access.</strong> Disconnect Google in the app under “Einstellungen → Konten &amp; KI” (tokens on the device are deleted) or revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+  <p><strong>Microsoft/Outlook (optional).</strong> Instead of Gmail, an advisor can connect a Microsoft account to send email via Outlook. The scopes are <code>Mail.Send</code>, <code>User.Read</code> (to show the connected account), <code>openid</code>, <code>profile</code> and <code>offline_access</code>. The app sends only emails the advisor triggers and does not read the mailbox. Tokens are stored as described above.</p>
+  <p><strong>AI drafting (optional).</strong> An advisor can connect their own ChatGPT account for text drafts (provider: OpenAI, USA). Only the text template with placeholders is sent to ChatGPT, never customer data or data from Google or Microsoft.</p>
+  <p><strong>Updates and feedback.</strong> The app checks GitHub for verified updates at start and every 6 hours; GitHub processes technically necessary access data such as IP addresses. “Feedback senden” sends the message type and text, the app version and the operating system to the publisher, but no customer data.</p>
+  <p><strong>Revoking access.</strong> Disconnect Google, Microsoft or ChatGPT in the app under “Einstellungen → Konten &amp; KI”; tokens on the device are deleted. You can also revoke Google access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, and Microsoft access at <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a> or in your work account.</p>
   <p><strong>This website</strong> is hosted on GitHub Pages (GitHub, Inc.), which processes technically necessary access data such as IP addresses. It uses no cookies and no analytics.</p>
   <p><strong>Your rights.</strong> You have the rights of access, rectification, erasure, restriction, data portability and objection under the GDPR. Contact the controller by email. You may also lodge a complaint with a data protection supervisory authority.</p>
 </main>
