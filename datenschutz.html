@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Datenschutzerklärung – DBI Kontaktcockpit</title>
+<title>Datenschutzerklärung – Kontanavi (DBI Kontaktcockpit)</title>
 <style>
   body { font: 16px/1.55 -apple-system, "Segoe UI", Arial, sans-serif; color: #1c2430; background: #f7f8fa; margin: 0; }
   main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
@@ -15,19 +15,20 @@
 <body>
 <main>
   <h1>Datenschutzerklärung</h1>
-  <p class="unter">DBI Kontaktcockpit · Stand: 29.09.2026 · <a href="#english">English version below</a> · <a href="index.html">Startseite</a></p>
+  <p class="unter">Kontanavi (bisher DBI Kontaktcockpit) · Stand: 24.10.2026 · <a href="#english">English version below</a> · <a href="index.html">Startseite</a></p>
 
   <h2>1. Verantwortlicher</h2>
   <p>João da Silva<br>Kieler Straße 424<br>22525 Hamburg<br>E-Mail: <a href="mailto:joao.dasilva.baufi@gmail.com">joao.dasilva.baufi@gmail.com</a></p>
 
   <h2>2. Worum es geht</h2>
-  <p>Diese Erklärung gilt für das Desktop-Programm „DBI Kontaktcockpit“ (Mac und Windows) und für diese Webseite. Das Programm unterstützt Finanzberater bei der Betreuung ihrer Kunden. Der Zugang wird vom Herausgeber einzeln freigeschaltet.</p>
+  <p>Diese Erklärung gilt für das Desktop-Programm „Kontanavi – das Kontaktcockpit für Finanzberater“ (bisher „DBI Kontaktcockpit“, Mac und Windows) und für diese Webseite. Das Programm unterstützt Finanzberater bei der Betreuung ihrer Kunden. Der Zugang wird vom Herausgeber einzeln freigeschaltet.</p>
 
   <h2>3. Anmeldung, zentrale Speicherung und Sicherungen</h2>
   <ul>
     <li><strong>Anmeldung:</strong> Berater melden sich mit ihrer E-Mail-Adresse und einem Einmalcode an. Dafür werden E-Mail-Adresse, Name (falls angegeben), Freigabestatus und eine Gerätekennung beim Dienst Supabase verarbeitet.</li>
-    <li><strong>Kundenbestand:</strong> Die Kundendaten des Beraters liegen in einer zentralen Datenbank in der EU (Supabase, Rechenzentrum Frankfurt) und werden verschlüsselt übertragen. Zugriff haben nur freigeschaltete Konten, denen der Bestand gehört oder für die er freigegeben wurde.</li>
-    <li><strong>Nachtsicherung:</strong> Nachts erstellt der Server von jedem geänderten Bestand eine verschlüsselte Sicherungskopie. Öffnen kann sie nur der Herausgeber, und nur, um im Notfall wiederherzustellen. Die Kopien liegen im geschützten Speicher der zentralen Datenbank (EU). Endgültig gelöschte Kunden bleiben auch bei einer Wiederherstellung gelöscht.</li>
+    <li><strong>Kundenbestand:</strong> Die Kundendaten des Beraters liegen in einer zentralen Datenbank in der EU (Supabase, Rechenzentrum Frankfurt) und werden verschlüsselt übertragen. Dazu gehören Kontaktdaten, Anfragen, Verlauf, Termine, Abschlüsse, eigene Status, Verträge (z. B. Vertragsnummer, Laufzeiten, Beträge), vom Berater angelegte Formularvorlagen sowie beim Kunden abgelegte Dokumente (PDF). Zugriff haben nur freigeschaltete Konten, denen der Bestand gehört oder für die er freigegeben wurde.</li>
+    <li><strong>Hinweise (Tipps):</strong> Hinweise, welches Angebot zu einem Kunden passen könnte, berechnet das Programm nach festen Regeln auf dem Gerät des Beraters. Sie sind nur für den Berater bestimmt und werden nie automatisch an Kunden geschickt.</li>
+    <li><strong>Nachtsicherung:</strong> Nachts erstellt der Server von jedem geänderten Bestand eine verschlüsselte Sicherungskopie. Öffnen kann sie nur der Herausgeber mit seinem privaten Schlüssel, und nur, um sie im Notfall anzusehen, wiederherzustellen oder einzelne Kunden an den Berater zurückzugeben. Das Programm des Herausgebers holt die verschlüsselten Kopien und die PDF-/Excel-Dateien der Bestände in den App-Ordner seines eigenen, privaten Microsoft-OneDrive ab. Beim Server bleiben abgeholte Kopien noch 35 Tage, gelöschte Dateien ebenso lange (Dateien endgültig gelöschter Kunden nicht). Endgültig gelöschte Kunden bleiben auch bei einer Wiederherstellung gelöscht.</li>
     <li><strong>Eigene Sicherung (optional):</strong> Ein Berater kann eine verschlüsselte Sicherung seiner Daten in <em>seinem eigenen</em> OneDrive ablegen. Dafür verbindet er sein Microsoft-Konto gesondert, mit den Berechtigungen <code>Files.ReadWrite.AppFolder</code> und <code>Files.Read</code>. <code>Files.Read</code> verlangt Microsoft für die Anzeige des freien Speicherplatzes. Das Programm schreibt nur in seinen eigenen App-Ordner.</li>
     <li><strong>Übergabe und Export:</strong> Kunden lassen sich verschlüsselt an einen anderen freigeschalteten Berater übergeben. Ein Export (Excel/PDF) legt eine unverschlüsselte Datei auf dem Gerät des Beraters ab, und das Programm weist vorher darauf hin.</li>
   </ul>
@@ -56,7 +57,14 @@
   <p>Statt Gmail kann ein Berater sein Microsoft-Konto verbinden, um Mails über Outlook zu senden. Die Berechtigungen sind <code>Mail.Send</code>, <code>User.Read</code> (Anzeige des verbundenen Kontos), <code>openid</code>, <code>profile</code> und <code>offline_access</code>. Das Programm sendet nur Mails, die der Berater auslöst, und liest das Postfach nicht. Die Anmeldedaten werden gespeichert wie bei Google.</p>
 
   <h2>6. KI-Hilfe für Textentwürfe (optional)</h2>
-  <p>Für Textentwürfe kann ein Berater sein eigenes ChatGPT-Konto verbinden (Anbieter: OpenAI, USA). An ChatGPT geht nur die Textvorlage mit Platzhaltern, keine Kundendaten und keine Daten aus Google oder Microsoft.</p>
+  <p>Für Textentwürfe kann ein Berater sein eigenes ChatGPT-Konto verbinden (Anbieter: OpenAI, USA). An ChatGPT geht nur die Textvorlage mit Platzhaltern, keine Kundendaten und keine Daten aus Google oder Microsoft. Enthält eine Anweisung an die KI erkennbar Kundendaten, warnt das Programm vorher.</p>
+
+  <h2>6a. Auf dem Gerät: PDF-Import, Finanzrechner, Bürotelefon</h2>
+  <ul>
+    <li><strong>PDF-Import:</strong> Kundenlisten aus PDF-Dateien liest das Programm auf dem Gerät des Beraters, bei eingescannten Seiten mit einer Texterkennung, die ebenfalls auf dem Gerät läuft. Es wird dafür nichts an einen KI- oder Cloud-Dienst geschickt. Gemerkte Import-Vorlagen enthalten nur die Lage der Felder, keine Kundendaten.</li>
+    <li><strong>Finanzrechner:</strong> Die Berechnungen laufen auf dem Gerät; ein erzeugtes Kunden-PDF kann der Berater beim Kunden ablegen.</li>
+    <li><strong>Bürotelefon (optional):</strong> Richtet der Berater die Wählhilfe seiner FRITZ!Box ein, übergibt das Programm die zu wählende Nummer nur an diese Box im eigenen Büronetz. Benutzername und Kennwort der Box liegen verschlüsselt auf dem Gerät.</li>
+  </ul>
 
   <h2>7. Updates und Feedback</h2>
   <p>Das Programm sucht beim Start und alle 6 Stunden bei GitHub nach geprüften Updates. GitHub verarbeitet dabei technisch notwendige Zugriffsdaten wie die IP-Adresse. Über „Feedback senden“ gehen Art und Text der Nachricht, die Programmversion und das Betriebssystem an den Herausgeber, aber keine Kundendaten.</p>
@@ -71,8 +79,8 @@
   <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO). Wende dich dafür per E-Mail an den Verantwortlichen. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
 
   <h2 id="english">Privacy Policy (English)</h2>
-  <p><strong>Controller:</strong> João da Silva, Kieler Straße 424, 22525 Hamburg, Germany, <a href="mailto:joao.dasilva.baufi@gmail.com">joao.dasilva.baufi@gmail.com</a>. This policy covers the desktop app “DBI Kontaktcockpit” (macOS, Windows) and this website.</p>
-  <p><strong>Sign-in, central storage and backups.</strong> Advisors sign in with their email address and a one-time code. Email address, name (if provided), approval status and a device identifier are processed by the Supabase service for this. The advisor's customer database is hosted in the EU (Supabase, Frankfurt data center) and transmitted encrypted. Only approved accounts that own the database or were granted access can access it. Each night the server creates an encrypted backup of every changed database, which only the publisher can open, and only to restore in an emergency. It is kept in the protected storage of the central database (EU). Customers deleted permanently stay deleted on restore. Optionally, an advisor can store an encrypted backup of their data in <em>their own</em> OneDrive by connecting their Microsoft account separately with the scopes <code>Files.ReadWrite.AppFolder</code> and <code>Files.Read</code> (required by Microsoft to show the free space); the app writes only to its own app folder. Customers can be handed over encrypted to another approved advisor. An export (Excel/PDF) creates an unencrypted file on the advisor's device, and the app warns about this first.</p>
+  <p><strong>Controller:</strong> João da Silva, Kieler Straße 424, 22525 Hamburg, Germany, <a href="mailto:joao.dasilva.baufi@gmail.com">joao.dasilva.baufi@gmail.com</a>. This policy covers the desktop app “Kontanavi” (formerly “DBI Kontaktcockpit”, macOS, Windows) and this website.</p>
+  <p><strong>Sign-in, central storage and backups.</strong> Advisors sign in with their email address and a one-time code. Email address, name (if provided), approval status and a device identifier are processed by the Supabase service for this. The advisor's customer database is hosted in the EU (Supabase, Frankfurt data center) and transmitted encrypted. Only approved accounts that own the database or were granted access can access it. Each night the server creates an encrypted backup of every changed database, which only the publisher can open, and only to restore in an emergency. It is kept in the protected storage of the central database (EU). The publisher's app collects these encrypted copies and the PDF/Excel files into the app folder of the publisher's own private Microsoft OneDrive; the server keeps collected copies (and deleted files, except those of permanently deleted customers) for 35 more days. Customers deleted permanently stay deleted on restore. The customer database also contains contracts (e.g. contract numbers, terms, amounts), custom statuses, form templates and documents (PDF) filed with a customer; offer hints are computed by fixed rules on the advisor's device and never sent to customers. Optionally, an advisor can store an encrypted backup of their data in <em>their own</em> OneDrive by connecting their Microsoft account separately with the scopes <code>Files.ReadWrite.AppFolder</code> and <code>Files.Read</code> (required by Microsoft to show the free space); the app writes only to its own app folder. Customers can be handed over encrypted to another approved advisor. An export (Excel/PDF) creates an unencrypted file on the advisor's device, and the app warns about this first.</p>
   <p><strong>Google user data.</strong> Each advisor may connect their own Google account; sign-in happens in the browser directly with Google. The app requests only these scopes and uses them only for actions the advisor triggers in the app:</p>
   <ul>
     <li><code>gmail.send</code>: sends the email the advisor composed and confirmed (e.g. an appointment confirmation) to the shown recipient. The app does not read the mailbox.</li>
@@ -85,6 +93,7 @@
   <p class="wichtig">The use of information received from Google Workspace scopes will adhere to the Google User Data Policy, including the Limited Use requirements.</p>
   <p><strong>Microsoft/Outlook (optional).</strong> Instead of Gmail, an advisor can connect a Microsoft account to send email via Outlook. The scopes are <code>Mail.Send</code>, <code>User.Read</code> (to show the connected account), <code>openid</code>, <code>profile</code> and <code>offline_access</code>. The app sends only emails the advisor triggers and does not read the mailbox. Tokens are stored as described above.</p>
   <p><strong>AI drafting (optional).</strong> An advisor can connect their own ChatGPT account for text drafts (provider: OpenAI, USA). Only the text template with placeholders is sent to ChatGPT, never customer data or data from Google or Microsoft.</p>
+  <p><strong>On the device.</strong> PDF customer lists are read on the advisor's device, scanned pages with on-device text recognition; nothing is sent to an AI or cloud service. Financial calculators run on the device. If the advisor sets up the dial helper of their FRITZ!Box, the app passes the number to dial only to that box in the office network; its user name and password are stored encrypted on the device.</p>
   <p><strong>Updates and feedback.</strong> The app checks GitHub for verified updates at start and every 6 hours; GitHub processes technically necessary access data such as IP addresses. “Feedback senden” sends the message type and text, the app version and the operating system to the publisher, but no customer data.</p>
   <p><strong>Revoking access.</strong> Disconnect Google, Microsoft or ChatGPT in the app under “Einstellungen → Konten &amp; KI”; tokens on the device are deleted. You can also revoke Google access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, and Microsoft access at <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a> or in your work account.</p>
   <p><strong>This website</strong> is hosted on GitHub Pages (GitHub, Inc.), which processes technically necessary access data such as IP addresses. It uses no cookies and no analytics.</p>
